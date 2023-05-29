@@ -20,7 +20,15 @@
 // It does not matter what you leave beyond the returned k (hence they are underscores).
 
 const removeElement = function (nums, val) {
-  return nums.filter((num) => num !== val).length;
+  let i = 0;
+  while (i < nums.length) {
+    if (nums[i] === val) {
+      nums.splice(i, 1); // Remove the element at index i
+    } else {
+      i++; // Move to the next element
+    }
+  }
+  return nums.length; // Return the length of the modified array
 };
 
 console.log(removeElement([3, 2, 2, 3], 3)); // Output: 2
